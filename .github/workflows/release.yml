@@ -10,7 +10,7 @@ on:
         default: '0.0.2'
 
 jobs:
-  release rules engine:
+  release_rules_engine:
     runs-on: macos-latest
     steps:
     # "release-drafter" action docs -> https://github.com/marketplace/actions/release-drafter
