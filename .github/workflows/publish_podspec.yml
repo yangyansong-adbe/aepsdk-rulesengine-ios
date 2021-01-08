@@ -8,26 +8,34 @@ on:
         description: 'tag/version'     
         required: true
         default: '1.0.0'
-
-jobs:
-  build:
-
-    runs-on: macos-latest
-    
+  release:
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-      with:
-        ref: main
-    - name: Branch name
-      run: echo running on branch ${GITHUB_REF##*/}
+      - name: Build Changelog
+        id: github_release
+        uses: mikepenz/release-changelog-builder-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# jobs:
+#   build:
+
+#     runs-on: macos-latest
+    
+#     steps:
+#     - uses: actions/checkout@v2
+#       with:
+#         ref: main
+#     - name: Branch name
+#       run: echo running on branch ${GITHUB_REF##*/}
       
-    - name: Build Changelog
-      id: github_release
-      uses: mikepenz/release-changelog-builder-action@main
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: echo
-      run: echo release notes ${{steps.github_release.outputs.changelog}}
+#     - name: Build Changelog
+#       id: github_release
+#       uses: mikepenz/release-changelog-builder-action@main
+#       env:
+#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#     - name: echo
+#       run: echo release notes ${{steps.github_release.outputs.changelog}}
 #     - name: Install Cocoapods
 #       run: gem install cocoapods
       
