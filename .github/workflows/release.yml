@@ -18,5 +18,6 @@ jobs:
         name: v${{ github.event.inputs.tag }}
         tag: ${{ github.event.inputs.tag }}
         version: ${{ github.event.inputs.tag }}
+        publish: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
