@@ -18,6 +18,8 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: main
     - name: Branch name
       run: echo running on branch ${GITHUB_REF##*/}
 #     - name: Install Cocoapods
