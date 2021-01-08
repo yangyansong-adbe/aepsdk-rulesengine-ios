@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
-  s.name             = "AEPRulesEngine"
+  s.name             = "SwiftRulesEngine"
   s.version          = "1.0.0-beta.1"
-  s.summary          = "AEPRulesEngine"
+  s.summary          = "SwiftRulesEngine"
   s.description      = <<-DESC
                       A simple, generic, extensible Rules Engine in Swift
                         DESC
-  s.homepage         = "https://github.com/adobe/aepsdk-rulesengine-ios"
+  s.homepage         = "https://github.com/yangyansong-adbe/aepsdk-rulesengine-ios"
   s.license          = 'Apache V2'
   s.author       = "Adobe Experience Platform SDK Team"
-  s.source           = { :git => "https://github.com/adobe/aepsdk-rulesengine-ios.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/yangyansong-adbe/aepsdk-rulesengine-ios.git", :tag => s.version.to_s }
 
   s.requires_arc          = true
 
