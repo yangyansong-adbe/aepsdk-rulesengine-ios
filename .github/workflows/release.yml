@@ -7,7 +7,7 @@ on:
       tag:
         description: 'tag/version'     
         required: true
-        default: '1.0.0'
+        default: '0.0.2'
 
 jobs:
   update_release_draft:
@@ -15,8 +15,8 @@ jobs:
     steps:
     - uses: release-drafter/release-drafter@v5
       with:
-        name: v0.0.1
-        tag: 0.0.1
-        version: 0.0.1
+        name: v${{ github.event.inputs.logLevel }}
+        tag: ${{ github.event.inputs.logLevel }}
+        version: ${{ github.event.inputs.logLevel }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
