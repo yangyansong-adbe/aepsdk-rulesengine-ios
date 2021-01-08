@@ -25,12 +25,13 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: main
-    - name: Publicsh Pods
+
+    - name: Publish Pods
       run: |
         set -eo pipefail
         gem install cocoapods
         pod lib lint --allow-warnings
-        pod trunk push --allow-warnings
+        pod trunk push SwiftRulesEngineTest.podspec --allow-warnings
       env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
         
