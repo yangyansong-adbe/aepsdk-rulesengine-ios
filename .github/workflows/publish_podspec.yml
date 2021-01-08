@@ -6,12 +6,10 @@ name: Publish Podspec Main
 on: 
   workflow_dispatch:
     inputs:
-      logLevel:
-        description: 'Log level'     
+      tag:
+        description: 'tag/version (1.0.0)'     
         required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags' 
+        default: ''
 
 jobs:
   build:
