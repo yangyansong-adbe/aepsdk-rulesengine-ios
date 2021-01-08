@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
-  s.name             = "SwiftRulesEngine"
+  s.name             = "SwiftRulesEngineTest"
   s.version          = "1.0.0-beta.1"
-  s.summary          = "SwiftRulesEngine"
+  s.summary          = "SwiftRulesEngineTest"
   s.description      = <<-DESC
                       A simple, generic, extensible Rules Engine in Swift
                         DESC
