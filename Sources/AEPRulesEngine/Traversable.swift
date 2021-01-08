@@ -30,4 +30,3 @@ extension Traversable {
         return result
     }
 }
-
