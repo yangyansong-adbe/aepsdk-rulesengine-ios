@@ -6,6 +6,9 @@ on:
       - dev
       - main
       - dev-**
+    paths:
+      - 'Sources/**'
+      - 'Tests/**'
     paths-ignore:
       - '*.md'
       - '*.yml'
@@ -14,6 +17,9 @@ on:
       - dev
       - main
       - dev-**
+    paths:
+      - 'Sources/**'
+      - 'Tests/**'
     paths-ignore:
       - '*.md'
       - '*.yml'
