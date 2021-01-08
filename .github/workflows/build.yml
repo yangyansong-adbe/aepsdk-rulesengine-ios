@@ -8,6 +8,7 @@ on:
       - dev-**
     paths-ignore:
       - '*.md'
+      - '*.yml'
   pull_request:
     branches:
       - dev
