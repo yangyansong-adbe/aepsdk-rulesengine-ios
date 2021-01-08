@@ -10,7 +10,7 @@ on:
         default: '0.0.2'
 
 jobs:
-  update_release_draft:
+  release rules engine:
     runs-on: macos-latest
     steps:
     # "release-drafter" action docs -> https://github.com/marketplace/actions/release-drafter
@@ -27,7 +27,11 @@ jobs:
         ref: main
     - name: Publicsh Pods
       run: |
+        set -eo pipefail
         gem install cocoapods
         pod lib lint --allow-warnings
+        pod trunk push --allow-warnings
+      env:
+        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
         
         
