@@ -17,3 +17,5 @@ generate-lcov:
 # make check-version VERSION=1.0.0-beta.1
 check-version:
 	(sh ./script/version.sh $(VERSION))
+test-SPM-integration:
+	(sh ./script/test-SPM.sh)
