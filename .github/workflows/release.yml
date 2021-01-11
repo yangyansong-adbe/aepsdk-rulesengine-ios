@@ -21,7 +21,7 @@ jobs:
       run: |
         set -eo pipefail
         echo Target version: ${{ github.event.inputs.tag }}
-        make check-version ${{ github.event.inputs.tag }}
+        make check-version VERSION=${{ github.event.inputs.tag }}
     # "release-drafter" action docs -> https://github.com/marketplace/actions/release-drafter
     - uses: release-drafter/release-drafter@v5
       with:
