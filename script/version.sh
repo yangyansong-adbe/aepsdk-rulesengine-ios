@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PODSPEC_VERSION=$(cat ../AEPRulesEngine.podspec | egrep '^\s*s.version\s*=\s*\"(.*)\"' | ruby -e "puts gets.scan(/^\s*s.version\s*=\s*\"(.*)\"/)[0] ")
+PODSPEC_VERSION=$(cat ./SwiftRulesEngineTest.podspec | egrep '^\s*s.version\s*=\s*\"(.*)\"' | ruby -e "puts gets.scan(/^\s*s.version\s*=\s*\"(.*)\"/)[0] ")
 NC='\033[0m'
 RED='\033[0;31m'
 GREEN='\033[0;32m'
