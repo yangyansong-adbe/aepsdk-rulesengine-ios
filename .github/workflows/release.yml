@@ -26,7 +26,7 @@ jobs:
     - name: SPM integration test
       run: |
         set -eo pipefail
-        echo SPM integration test starts >>>>
+        echo SPM integration test starts:
         make test-SPM-integration
     - uses: release-drafter/release-drafter@v5
       with:
