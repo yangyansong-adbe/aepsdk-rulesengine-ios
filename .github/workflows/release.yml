@@ -13,6 +13,11 @@ jobs:
   release_rules_engine:
     runs-on: macos-latest
     steps:
+    - name: Check version in Podspec
+      run: |
+        set -eo pipefail
+        echo Target version: ${{ github.event.inputs.tag }}
+        make check-version ${{ github.event.inputs.tag }}
     # "release-drafter" action docs -> https://github.com/marketplace/actions/release-drafter
     - uses: release-drafter/release-drafter@v5
       with:
@@ -31,7 +36,7 @@ jobs:
         set -eo pipefail
         gem install cocoapods
         pod lib lint --allow-warnings
-        pod trunk push SwiftRulesEngineTest.podspec --allow-warnings
+    # pod trunk push SwiftRulesEngineTest.podspec --allow-warnings
       env:
         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
         
