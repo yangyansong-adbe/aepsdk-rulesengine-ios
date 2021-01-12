@@ -21,3 +21,9 @@ test-SPM-integration:
 	(sh ./script/test-SPM.sh)
 test-podspec:
 	(sh ./script/test-podspec.sh)
+latest-version:
+	(which jq)
+	(pod spec cat SwiftRulesEngineTest | jq '.version' | tr -d '"')
+version-podspec-local:
+	(which jq)
+	(pod ipc spec SwiftRulesEngineTest.podspec | jq '.version' | tr -d '"')

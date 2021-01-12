@@ -4,13 +4,16 @@ set -e # Any subsequent(*) commands which fail will cause the shell script to ex
 
 PROJECT_NAME=TestProject
 
+# Clean up.
+rm -rf $PROJECT_NAME
+
 mkdir -p $PROJECT_NAME && cd $PROJECT_NAME
 
 # Create a new Xcode project.
 swift package init
 swift package generate-xcodeproj
 
-# Create a Podfile with our pod as dependency.
+# Create a Podfile
 echo "
 platform :ios, '10.0'
 target '$PROJECT_NAME' do
@@ -29,10 +32,6 @@ xcodebuild archive -scheme TestProject-Package -workspace TestProject.xcworkspac
 # Build for generic iOS device
 echo '############# Build for generic iOS device ###############'
 xcodebuild clean build -scheme TestProject-Package -workspace TestProject.xcworkspace -destination 'generic/platform=iOS'
-
-# Archive for x86_64 simulator
-echo '############# Archive for simulator ###############'
-xcodebuild archive -scheme TestProject-Package -workspace TestProject.xcworkspace -destination 'generic/platform=iOS Simulator'
 
 # Build for x86_64 simulator
 echo '############# Build for simulator ###############'
